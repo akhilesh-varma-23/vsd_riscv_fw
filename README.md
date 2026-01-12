@@ -10,7 +10,7 @@ The goal of this repository is to introduce participants to:
 
 This repository will be extended throughout the internship.
 
-
+---
 ## How to start
 
 All participants must begin with **Task 1**.
@@ -22,7 +22,7 @@ task1/README.md
 and follow the instructions carefully.
 
 
-
+---
 ## Important Notes
 
 - This internship focuses on **embedded firmware development**
