@@ -1,11 +1,11 @@
 # Task 1: Firmware Library Fundamentals
 
-## ⏳ Deadline
+## Deadline
 4 days from the task announcement date.
 
 ---
 
-## 🎯 Objective
+## Objective
 
 The goal of Task 1 is to:
 
@@ -14,12 +14,12 @@ The goal of Task 1 is to:
 - Set up a basic development environment  
 - Build and study a simple firmware-style library  
 
-⚠️ This task does **not** require the VSDSquadron Mini board.
+This task does **not** require the VSDSquadron Mini board.
 
 ---
 
 
-## 🛠 What to Do
+## What to Do
 
 ### Step 1: Read the Code
 
@@ -47,13 +47,13 @@ gcc main.c gpio.c -o task1_demo
 
 ---
 
-## ✅ Expected Output
+## Expected Output
 
 Console messages simulating GPIO behavior.
 
 ---
 
-## 📤 What to Submit
+## What to Submit
 
 1. A short explanation (Markdown or PDF) covering:
 
@@ -70,7 +70,7 @@ Console messages simulating GPIO behavior.
 
 ---
 
-## ⚠️ Important
+## Important
 
 This task sets the foundation for all upcoming hardware and firmware work.
 Incomplete understanding here **will cause difficulties in later tasks**.
