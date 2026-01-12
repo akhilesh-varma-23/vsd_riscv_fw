@@ -56,7 +56,7 @@ Console messages simulating GPIO behavior:
 - Firmware application finished
 ---
 
-## What is a firmware library?
+## 1. What is a firmware library?
 A firmware library is a collection of pre-written software functions, data structures, and macros provided by hardware manufacturers to simplify the interaction between high-level application code and a device's low-level hardware peripherals. It acts as a Hardware Abstraction Layer (HAL), allowing developers to control complex hardware features without needing to program directly at the register level. 
 
 It is a pre-written software functions and drivers that make it easier to control the hardware peripherals of a microcontroller (GPIO, UART, SPI, I2C, timers, ADC, etc.) without directly manipulating registers every time.
@@ -72,21 +72,38 @@ Hardware Registers <br>
 Microcontroller Hardware
 
 
-## Why are APIs important?
+## 2. Why are APIs important?
+
+APIs (Application Programming Interfaces) act as a bridge between the application layer and the driver/firmware layer. They define a standard way for the application to request services from the drivers without needing to know hardware-specific details. This separation improves clarity, safety, and flexibility in embedded system design.
+
+- Separate application logic from hardware control
+- Improve code readability and clarity
+- Enable portability across different hardware
+- Prevent unsafe or invalid hardware access
+- Support reuse of drivers and application code
+- Make testing and debugging easier
+
+API's used in the task1 are `gpio_init`, `gpio_write` and `gpio_read`.
+
+## 3. What you understood from this task
+
+- file `gpio.h` is the driver header file, where all the API's, macros are declared.
+- file `gpio.c` is the driver source file, where all the API's are implemented. This code is actually interact with the hardware registers (GPIO Registers). We can modify (enable, disable, set, reset, read, write, mode change) the bits in that register. By changing the register values, we can actually control the hardware peripheral (GPIO).
+- file `main.c` is our main application code. In this code, we are calling API's and passing our required input parameters (such as pin numbers, values to be written, mode input/output). Now in `gpio.c`, it will take the input parameters and execute the respective API code which is getting called in `main.c`. 
+- Like this we can control our hardware registers, which are developed in driver source file `gpio.c` by calling that API's and passing some parameters, in our application code `main.c`.
 
 
-1. A short explanation (Markdown or PDF) covering:
-
-   * What is a firmware library?
-   * Why are APIs important?
-   * What you understood from this task
-
-2. Screenshots of:
+## Screenshots of:
 
    * Successful compilation
+     
+     ![alt text](image.png)
+
    * Program output
 
-3. GitHub repository link (forked or personal)
+      ![alt text](<img1.png>)
+
+
 
 ---
 
