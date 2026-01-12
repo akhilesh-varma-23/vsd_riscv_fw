@@ -1,10 +1,5 @@
 # Task 1: Firmware Library Fundamentals
 
-## Deadline
-4 days from the task announcement date.
-
----
-
 ## Objective
 
 The goal of Task 1 is to:
@@ -49,11 +44,36 @@ gcc main.c gpio.c -o task1_demo
 
 ## Expected Output
 
-Console messages simulating GPIO behavior.
+Console messages simulating GPIO behavior:
 
+- Starting firmware application
+- GPIO 5 initialized as OUTPUT
+- GPIO 3 initialized as INPUT
+- GPIO 5 write value: 1
+- GPIO 3 read value
+- Button state: 1
+- GPIO 5 write value: 0
+- Firmware application finished
 ---
 
-## What to Submit
+## What is a firmware library?
+A firmware library is a collection of pre-written software functions, data structures, and macros provided by hardware manufacturers to simplify the interaction between high-level application code and a device's low-level hardware peripherals. It acts as a Hardware Abstraction Layer (HAL), allowing developers to control complex hardware features without needing to program directly at the register level. 
+
+It is a pre-written software functions and drivers that make it easier to control the hardware peripherals of a microcontroller (GPIO, UART, SPI, I2C, timers, ADC, etc.) without directly manipulating registers every time.
+
+Layers in Embedded Software:
+
+Your Application Code <br>
+↓ <br>
+Firmware Library (HAL / Driver / SDK) <br>
+↓ <br>
+Hardware Registers <br>
+↓ <br>
+Microcontroller Hardware
+
+
+## Why are APIs important?
+
 
 1. A short explanation (Markdown or PDF) covering:
 
@@ -70,9 +90,5 @@ Console messages simulating GPIO behavior.
 
 ---
 
-## Important
-
-This task sets the foundation for all upcoming hardware and firmware work.
-Incomplete understanding here **will cause difficulties in later tasks**.
 
 
