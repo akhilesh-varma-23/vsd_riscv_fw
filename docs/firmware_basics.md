@@ -38,6 +38,28 @@ In industry:
 - hardware may change, APIs should not
 - clear APIs reduce bugs and development time
 
-This internship focuses on *building such APIs*
+This internship focuses on **building such APIs**
 
 ---
+
+## Bare-Metal Firmware
+
+Bare-metal firmware runs without an operating system.
+
+Characteristics:
+- No scheduler
+- No tasks or threads
+- Code runs directly from main()
+
+This approach helps engineers:
+- understand timing clearly
+- debug hardware interactions
+- build strong fundamentals
+
+---
+
+## What You Will Build in This Internship
+- Core firmware APIs (GPIO, timing, serial)
+- One complete peripheral driver or library
+- Hardware-tested examples
+- A GitHub portfolio project
