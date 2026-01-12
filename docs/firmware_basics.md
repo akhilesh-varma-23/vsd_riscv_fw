@@ -33,3 +33,11 @@ The application code does not need to know those details.
 
 ---
 ## Why APIs Matter
+In industry:
+- firmware is reused across projects
+- hardware may change, APIs should not
+- clear APIs reduce bugs and development time
+
+This internship focuses on *building such APIs*
+
+---
