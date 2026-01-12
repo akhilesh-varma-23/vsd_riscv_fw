@@ -22,6 +22,7 @@ A firmware library is a collection of reusable functions that provide a clean in
 Example:
 ```c
 gpio_write(LED_PIN, 1);
+```
 
 Internally, this function may:
 - configure registers
