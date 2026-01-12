@@ -10,22 +10,6 @@ The goal of this repository is to introduce participants to:
 
 This repository will be extended throughout the internship.
 
----
-
-## Repository Structure
-
-vsdsquadron-mini-core/
-├── task1/
-│ ├── README.md
-│ ├── main.c
-│ ├── gpio.c
-│ └── gpio.h
-├── docs/
-│ └── firmware_basics.md
-└── README.md
-
-
----
 
 ## How to start
 
@@ -37,7 +21,7 @@ task1/README.md
 
 and follow the instructions carefully.
 
----
+
 
 ## Important Notes
 
@@ -47,7 +31,7 @@ and follow the instructions carefully.
 - No RTL / Verilog / HDL is used in this program
 - Initial tasks do not require the physical board
 
----
+
 
 VLSI System Design  
 https://www.vlsisystemdesign.com
