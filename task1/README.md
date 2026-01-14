@@ -61,7 +61,7 @@ A firmware library is a collection of pre-written software functions, data struc
 
 It is a pre-written software functions and drivers that make it easier to control the hardware peripherals of a microcontroller (GPIO, UART, SPI, I2C, timers, ADC, etc.) without directly manipulating registers every time.
 
-Layers in Embedded Software:
+**Layers in Embedded Software**:
 
 Your Application Code <br>
 ↓ <br>
@@ -90,7 +90,15 @@ API's used in the task1 are `gpio_init`, `gpio_write` and `gpio_read`.
 - file `gpio.h` is the driver header file, where all the API's, macros are declared.
 - file `gpio.c` is the driver source file, where all the API's are implemented. This code is actually interact with the hardware registers (GPIO Registers). We can modify (enable, disable, set, reset, read, write, mode change) the bits in that register. By changing the register values, we can actually control the hardware peripheral (GPIO).
 - file `main.c` is our main application code. In this code, we are calling API's and passing our required input parameters (such as pin numbers, values to be written, mode input/output). Now in `gpio.c`, it will take the input parameters and execute the respective API code which is getting called in `main.c`. 
-- Like this we can control our hardware registers, which are developed in driver source file `gpio.c` by calling that API's and passing some parameters, in our application code `main.c`.
+- Like this we can control our hardware registers, which are developed in driver source file `gpio.c`, by calling that API's and passing some parameters, in our application code `main.c`.
+
+`main.c`(Your Application Code) <br>
+↓ <br>
+`gpio.h`, `gpio.c`(Firmware Library (HAL / Driver / SDK)) <br>
+↓ <br>
+Hardware Registers <br>
+↓ <br>
+Microcontroller Hardware
 
 
 ## Screenshots of:
