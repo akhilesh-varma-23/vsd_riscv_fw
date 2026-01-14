@@ -65,7 +65,7 @@ It is a pre-written software functions and drivers that make it easier to contro
 
 ![alt text](<img2.jpeg>)
 
-- **Hardware Layer**
+### Hardware Layer
 This is the actual physical circuitry inside the RISC-V chip — CPU, GPIO, UART, timers, memories.
 
 - For Example taken GPIO as reference:
@@ -79,7 +79,7 @@ It contains pullup/pulldown resistors and logic that drive a real pin high or lo
       ```
     Suppose Pin 5 controls the physical LED
 
-- **Bootloader Layer**
+### Bootloader Layer
 This is the first software that runs after reset.
 It prepares the chip so that the main firmware can run.
 Purpose: “Bring the hardware to a usable state and load the firmware.”
@@ -91,7 +91,7 @@ It may turn on an LED or set pin directions to show that the system has powered 
 *(volatile uint32_t*)0x40020000 |= (1 << 5);   // Turn LED ON
 ```
 
-- **HAL / Driver Layer**
+### HAL / Driver Layer
 This layer converts hardware registers into C functions.
 It hides addresses and bit operations from higher software.
 
@@ -123,7 +123,7 @@ Instead of writing to 0x40020000, you call gpio_write(5,1).
 Now no one touches addresses directly.
 Purpose: “Make hardware easy and safe to use.”
 
-- **Middleware Layer**
+### Middleware Layer
 This layer provides reusable system services built on drivers.
 Uses drivers to provide services.
 
@@ -142,7 +142,7 @@ void LED_Off()
 ```
 Now application doesn’t know about GPIO pins.
 
-- **RTOS / Scheduler**
+### RTOS / Scheduler
 This layer decides which code runs and when.
 It manages tasks, delays, priorities, and timing.
 
@@ -162,7 +162,7 @@ void LedTask(void *p)
 ```
 Purpose: “Manage timing and multitasking.”
 
-- **Application Layer**
+### Application Layer
 This is the actual product logic written by the developer.
 - For GPIO
 ```
@@ -187,6 +187,8 @@ APIs (Application Programming Interfaces) act as a bridge between the applicatio
 - Make testing and debugging easier
 
 API's used in the task1 are `gpio_init`, `gpio_write` and `gpio_read`.
+
+---
 
 ## 3. What you understood from this task
 
