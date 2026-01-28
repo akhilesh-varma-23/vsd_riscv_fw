@@ -13,7 +13,7 @@ Application (main.c)
 ├── driver_rcc.c / driver_rcc.h      → Clock control + SysTick delay
 ├── driver_gpio.c / driver_gpio.h    → GPIO configuration & control
 ├── driver_uart_debug.c / .h         → Debug UART (TX only)
-└── startup / SystemInit             → Clock & reset setup
+
 ```
 
 Dependency flow:
