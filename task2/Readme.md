@@ -320,54 +320,64 @@ HAL_Delay_ms(50);
 
 ---
 
-flowchart TB
-    %% Application Layer
-    A[main.c<br/>Application Layer] --> A1[SystemInit()]
-    A --> A2[HAL_UART_Init()]
-    A --> A3[HAL_Delay_Init()]
-    A --> A4[HAL_RCC_APB2_Enable<br/>(RCC_GPIOD)]
-    A --> A5[HAL_GPIO_Init<br/>(GPIOD, PD4)]
-    A --> A6[while(1) Loop]
++--------------------------------------------------+
+|                   main.c                         |
+|--------------------------------------------------|
+| SystemInit()                                     |
+| HAL_UART_Init()                                  |
+| HAL_Delay_Init()                                 |
+| HAL_RCC_APB2_Enable(RCC_GPIOD)                   |
+| HAL_GPIO_Init(GPIOD, 4, OUTPUT_PP)               |
+|                                                  |
+| while (1)                                        |
+| {                                                |
+|   HAL_GPIO_TogglePin(GPIOD, 4)                   |
+|   HAL_UART_Print("LED Toggle Count: ", ...)      |
+|   HAL_Delay_ms(50)                               |
+| }                                                |
++------------------------|-------------------------+
+                         |
+                         v
++--------------------------------------------------+
+|                HAL / DRIVER APIs                 |
++------------------------+-------------------------+
+|                        |                         |
+|   RCC Driver           |   GPIO Driver           |
+|------------------------|-------------------------|
+| HAL_RCC_APB2_Enable()  | HAL_GPIO_Init()          |
+| HAL_RCC_APB2_Disable() | HAL_GPIO_TogglePin()    |
+|                        |                         |
++------------------------+-------------------------+
+                         |
+                         v
++--------------------------------------------------+
+|               UART Debug Driver                  |
+|--------------------------------------------------|
+| HAL_UART_Init()                                  |
+| HAL_UART_SendChar()                              |
+| HAL_UART_Print()                                 |
++------------------------|-------------------------+
+                         |
+                         v
++--------------------------------------------------+
+|               Delay / SysTick                    |
+|--------------------------------------------------|
+| HAL_Delay_Init()                                 |
+| HAL_Delay_ms()                                   |
+| HAL_Delay_us()                                   |
+| SysTick_Handler()                                |
++------------------------|-------------------------+
+                         |
+                         v
++--------------------------------------------------+
+|            MCU Hardware Registers                |
+|--------------------------------------------------|
+| RCC->APB2PCENR                                   |
+| GPIOD->CFGLR / OUTDR                             |
+| USART1->BRR / CTLR1 / DATAR / STATR              |
+| SysTick->CTLR / CNT / CMP                        |
++--------------------------------------------------+
 
-    %% Loop operations
-    A6 --> L1[HAL_GPIO_TogglePin<br/>(GPIOD, PD4)]
-    A6 --> L2[HAL_UART_Print<br/>(LED Toggle Count)]
-    A6 --> L3[HAL_Delay_ms(50)]
-
-    %% RCC Driver
-    A2 --> R1[RCC Driver]
-    A4 --> R1
-    R1 --> RR1[RCC->APB2PCENR]
-
-    %% GPIO Driver
-    A5 --> G1[GPIO Driver]
-    L1 --> G1
-    G1 --> GR1[GPIOD->CFGLR]
-    G1 --> GR2[GPIOD->OUTDR]
-
-    %% UART Driver
-    A2 --> U1[UART Debug Driver]
-    L2 --> U1
-    U1 --> UR1[USART1->BRR]
-    U1 --> UR2[USART1->CTLR1]
-    U1 --> UR3[USART1->DATAR]
-    U1 --> UR4[USART1->STATR]
-
-    %% Delay / SysTick
-    A3 --> D1[Delay / SysTick Driver]
-    L3 --> D1
-    D1 --> DR1[SysTick->CMP]
-    D1 --> DR2[SysTick->CNT]
-    D1 --> DR3[SysTick->CTLR]
-
-    %% Styling
-    classDef app fill:#E3F2FD,stroke:#1565C0,stroke-width:2px;
-    classDef driver fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px;
-    classDef reg fill:#FFF3E0,stroke:#EF6C00,stroke-width:2px;
-
-    class A,A1,A2,A3,A4,A5,A6,L1,L2,L3 app;
-    class R1,G1,U1,D1 driver;
-    class RR1,GR1,GR2,UR1,UR2,UR3,UR4,DR1,DR2,DR3 reg;
 
 
 
