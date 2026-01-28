@@ -20,6 +20,7 @@
 
 
 ## Putty Configuration
+![alt text](<Screenshot 2026-01-26 130850.png>)
 ---
 
 ## GPIO Evidence
