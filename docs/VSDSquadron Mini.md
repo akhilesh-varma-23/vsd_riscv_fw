@@ -27,6 +27,11 @@
 | Debug Interface | On-board programmer/debugger |
 | External Adapter | Not required |
 
+### Reference Documents
+[CH32V003 Reference Manual V1.6](Web02_CH32V003RM.pdf)
+[CH32V003 Datasheet V1.4](Web01_CH32V003DS0.pdf)
+[VSDSquadron Mini Flashing Guide](VSDSQMinidatasheet.pdf)
+
 ### Block Diagram
 ![alt text](img2.png)
 
