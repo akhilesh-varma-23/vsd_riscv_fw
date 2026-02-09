@@ -66,8 +66,9 @@ Flips the current output state of the pin.
 Example
 
 HAL_GPIO_TogglePin(GPIOD, 4);
-
-HAL_GPIO_ReadPin
+```
+## `HAL_GPIO_ReadPin`
+```
 uint8_t HAL_GPIO_ReadPin(GPIO_RegDef_t *GPIOx, uint8_t pin);
 
 
@@ -77,9 +78,11 @@ Reads logic level of a pin.
 Return
 
 0 = LOW, 1 = HIGH
+```
 
-UART Driver
-HAL_UART_Init
+# UART Driver
+## `HAL_UART_Init`
+```
 void HAL_UART_Init(void);
 
 
@@ -89,15 +92,17 @@ Initializes USART peripheral and configures TX/RX pins.
 Notes
 
 Sets baud rate and enables TX/RX.
-
-HAL_UART_SendChar
+```
+## `HAL_UART_SendChar`
+```
 void HAL_UART_SendChar(char c);
 
 
 Purpose
 Transmits one character.
-
-HAL_UART_SendString
+```
+## `HAL_UART_SendString`
+```
 void HAL_UART_SendString(const char *s);
 
 
@@ -107,15 +112,18 @@ Sends null-terminated string over UART.
 Example
 
 HAL_UART_SendString("Hello\r\n");
+```
 
-HAL_UART_ReadChar
+## `HAL_UART_ReadChar`
+```
 char HAL_UART_ReadChar(void);
 
 
 Purpose
 Receives a single character (blocking).
-
-HAL_UART_ReadLine
+```
+## `HAL_UART_ReadLine`
+```
 void HAL_UART_ReadLine(char *buf, uint8_t maxLen);
 
 
@@ -125,52 +133,60 @@ Reads a full line from terminal until ENTER.
 Notes
 
 Handles backspace and echo.
-
-HAL_UART_Print
+```
+## `HAL_UART_Print`
+```
 void HAL_UART_Print(const char *str, int32_t val, uint8_t base);
 
 
 Purpose
 Prints string + optional number (decimal/hex).
-
-RCC / Delay Driver
-HAL_RCC_APB2_Enable
+```
+# RCC / Delay Driver
+## `HAL_RCC_APB2_Enable`
+```
 void HAL_RCC_APB2_Enable(RCC_APB2Periph_t periph);
 
 
 Purpose
 Enables peripheral clock.
-
-HAL_RCC_APB2_Disable
+```
+## `HAL_RCC_APB2_Disable`
+```
 void HAL_RCC_APB2_Disable(RCC_APB2Periph_t periph);
 
 
 Purpose
 Disables peripheral clock.
-
-HAL_Delay_Init
+```
+## `HAL_Delay_Init`
+```
 void HAL_Delay_Init(void);
 
 
 Purpose
 Initializes delay system.
+```
 
-HAL_Delay_ms
+## `HAL_Delay_ms`
+```
 void HAL_Delay_ms(uint32_t ms);
 
 
 Purpose
 Blocking millisecond delay.
-
-HAL_Delay_us
+```
+## `HAL_Delay_us`
+```
 void HAL_Delay_us(uint32_t us);
 
 
 Purpose
 Blocking microsecond delay.
-
-CLI Driver
-CLI_Process
+```
+# CLI Driver
+## `CLI_Process`
+```
 void CLI_Process(char *cmd);
 
 
@@ -198,3 +214,4 @@ Blocking during blink.
 Example
 
 CLI_Process("led on");
+```
