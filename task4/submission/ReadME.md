@@ -9,7 +9,7 @@ A bare-metal embedded firmware project that implements a **UART-based Command Li
 - **GPIO Driver** – Pin configuration, read/write, toggle operations.
 - **UART Driver** – Serial communication for CLI input/output.
 - **Timer / Delay Driver** – Millisecond and microsecond delays.
-- **PWM Driver (Optional)** – Can be extended for brightness control or buzzer output.
+
 
 ---
 
