@@ -8,7 +8,7 @@ A bare-metal embedded firmware project that implements a **UART-based Command Li
 ## Drivers Used
 - **GPIO Driver** – Pin configuration, read/write, toggle operations.
 - **UART Driver** – Serial communication for CLI input/output.
-- **Timer / Delay Driver** – Millisecond and microsecond delays.
+- **RCC (Timer / Delay) Driver** – Millisecond and microsecond delays.
 
 
 ---
@@ -155,9 +155,10 @@ It translates user text commands into GPIO actions and UART responses, forming t
 
 1. Open the PlatformIO project
 2. Connect the VSDSquadron Mini board
-3. Build the project
-4. Upload the firmware using USB 2.0 to TTL UART serial converter
-5. Open a serial terminal in PuTTY to view UART logs
+3. Build the project.  (firmware.bin and firmware.elf generated)
+4. Upload the executable firmware file into the FLASH of MCU.
+5. Connect USB 2.0 to TTL UART serial converter to the system (pc) for UART output.
+6. Open a serial terminal in PuTTY to view UART logs
 
 ---
 
