@@ -13,7 +13,7 @@ A bare-metal firmware project that provides a **UART Command Line Interface (CLI
 
 ## Folder Structure
 ```
-task5/
+task4/
 │
 ├─ submission/
 │ ├─ include/
