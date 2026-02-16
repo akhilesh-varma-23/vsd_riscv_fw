@@ -6,16 +6,11 @@ The system follows a **layered bare-metal architecture** where low-level hardwar
 ---
 ## High-Level Block Diagram
 
-![alt text](<task5.png>)
+![alt text](<task51.png>)
 
 - **User (PC / Serial Terminal)**
   - User sends commands through a serial terminal (PuTTY, TeraTerm, etc.).
   - Acts as the input interface to control the board.
-
-- **UART Driver Layer**
-  - Handles serial communication between PC and microcontroller.
-  - Receives commands and sends responses.
-  - Abstracts hardware registers from upper layers.
 
 - **CLI (Command Line Interface)**
   - Parses user commands (e.g., `blink 500 10`).
@@ -30,6 +25,11 @@ The system follows a **layered bare-metal architecture** where low-level hardwar
 - **GPIO Driver**
   - Controls hardware pins (LED ON/OFF, toggle).
   - Provides simple APIs instead of direct register access.
+
+- **UART Driver Layer**
+  - Handles serial communication between PC and microcontroller.
+  - Receives commands and sends responses.
+  - Abstracts hardware registers from upper layers.
 
 - **Delay / Timer Driver**
   - Generates accurate millisecond delays.
