@@ -378,6 +378,24 @@ HAL_Delay_ms(50);
 | SysTick->CTLR / CNT / CMP                        |
 +--------------------------------------------------+
 
+---
+## Build and Flash Instructions
+1. Open the PlatformIO project
+2. Connect the VSDSquadron Mini board
+3. Build the project. (firmware.bin and firmware.elf generated)
+4. Upload the executable firmware file into the FLASH of MCU.
+5. Connect USB 2.0 to TTL UART serial converter to the system (pc) for UART output.
+6. Open a serial terminal in PuTTY to view UART logs
 
+---
+
+## UART Configuration
+
+1. UART Port: UART1
+2. Baud Rate: 115200
+3. Data Format: 8 data bits, No parity, 1 stop bit (8N1)
+4. UART output displays timestamped logs confirming correct timer operation.
+
+---
 
 
